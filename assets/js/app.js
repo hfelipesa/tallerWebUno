@@ -5,13 +5,11 @@ var opcionNumeros
 var opcionFactorial
 var numeroFactorial
 
-
 do{
      opcion=Number(prompt("----------BIENVENIDO A TU CALCULADOR ONLINE----------\nSelecciona de la lista la operacion que deseas realizar \n 1- Contador de numeros pares e impares"+
     " \n 2- Calculadora Factorial \n 3- Validacion de contraseña \n 4- Generador de tablas de multiplicar \n 5- Suma de Numeros Primos"+
     "\n 6- Secuencia Fibonacci \n 7- Convertidor de Temperatura \n 8- Calculadora de Potencia \n 9 Salir del Sistema"))
-   
-        switch(opcion){
+     switch(opcion){
             case 1:
                 console.log("1- Contador de numeros pares e impares")
 
@@ -187,14 +185,20 @@ do{
                       let resultado=0
 
                       var numeroFibonacci=Number(prompt("ingrese numero para realizar la frecuencia"))
+                      
+                      if(numeroFactorial>0){
                       console.log(n1)
                       console.log(n2)
-                      for(let i=3;i<=numeroFibonacci;i++){
-                          resultado=n1+n2
-                          n1=n2
-                          n2=resultado
-                          console.log(resultado)
+                        for(let i=3;i<=numeroFibonacci;i++){
+                            resultado=n1+n2
+                            n1=n2
+                            n2=resultado
+                            console.log(resultado)
+                        }
+                      }else{
+                        console.log("NUMERO INVALIDO LA FRECUENCIA SOLO ACEPTA NUMEROS POSITIVOS \nVOLVIENDO AL MENU ANTERIOR" )
                       }
+
                           Contador++
                           console.log("Numero de operaciones realizadas: " + Contador)    
                           break;
@@ -233,7 +237,7 @@ do{
                                 console.log(" OPCION INVALIDA VOLVIENDO AL MENU ANTERIOR ") 
                                 break       
                           }
-                        }else if(opcionGrados==2){
+                        }else if(opcionNumeros==2){
                             console.log("VOLVIENDO AL MENU PRINCIPAL")
                         }else{
                               console.log(" OPCION INVALIDA \n POR FAVOR INGRESE UNA OPCION VALIDA") 
@@ -241,11 +245,30 @@ do{
 
                      }while(opcionNumeros!=2)
                      break; 
-/**************************************************************************************************************************************************** */
-                
+/**************************************************************************************************************************************************** */           
             case 8:
-                console.log("8")
-                break;
+                console.log("Calculadora de Potencia:")
+                    
+                 do{
+                        opcionNumeros=Number(prompt("DESEA REALIZAR CALCULO \n1- Continuar\n2- Salir"))
+                          switch(opcionNumeros){
+                            case 1:
+                                let numerBase=Number(prompt("Por favor ingrese base"))
+                                let numeroExp=Number(prompt("Por favor ingrese exponente"))
+
+                                let resultadoPotencia=numerBase**numeroExp
+                                console.log("Base "+numerBase+" Exponente "+numeroExp+" = "+resultadoPotencia)
+                                break
+                            case 2:
+                                console.log("VOLVIENDO AL MENU PRINCIPAL")      
+                                break
+                            default:
+                                console.log(" OPCION INVALIDA VOLVIENDO AL MENU ANTERIOR ") 
+                                break       
+                          }
+
+                     }while(opcionNumeros!=2)
+                     break;
             case 9:
                 console.log("SALIENDO")     
             default:
