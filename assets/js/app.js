@@ -16,7 +16,7 @@ do{
                 console.log("1- Contador de numeros pares e impares")
 
             do{
-                opcionNumeros=Number(prompt("1- Realizar Calculo\n2- Salir"))
+                opcionNumeros=Number(prompt("DESEA REALIZAR CALCULO \n1- Continuar\n2- Salir"))
                 
                 switch(opcionNumeros){
                     case 1:
@@ -52,7 +52,7 @@ do{
             case 2:
                 console.log("2 -Calcular factorial")
                 do{
-                    opcionFactorial=Number(prompt("1- Realizar Calculo\n2- Salir"))
+                    opcionFactorial=Number(prompt("DESEA REALIZAR CALCULO \n1- Continuar\n2- Salir"))
 
                     if(opcionFactorial==1){
                         numeroFactorial=Number(prompt("por favor ingrese un numero positivo a calcular su factorial"))
@@ -70,20 +70,20 @@ do{
                            console.log("El numero factorial de 0 es 1")
                     }
                     }else if(opcionFactorial==2){
-                            console.log("Saliendo")
+                        console.log("VOLVIENDO AL MENU PRINCIPAL")  
                     }else{
-                        console.log("OPCION INVALIDA DIGITE UNA CORRECTA")
+                        console.log(" OPCION INVALIDA \n POR FAVOR INGRESE UNA OPCION VALIDA")
                     }
                     
                 }while(opcionFactorial!=2)
-                console.log("VOLVIENDO AL MENU PRINCIPAL")                
+                              
                 break;
  //*************************************************************************************************************************************************** */               
             case 3:
                     console.log("3 -Validacion de contraseña")
                     let opcionContraseña
                 do{                   
-                   opcionContraseña=Number(prompt("1-Desea realizar validacion\n2- Salir"))
+                   opcionContraseña=Number(prompt("DESEA REALIZAR CALCULO \n1- Continuar\n2- Salir"))
                    
                 if(opcionContraseña==1){ 
                     contadorContraseñas++
@@ -99,7 +99,7 @@ do{
                 }else if(opcionContraseña==2){
                      console.log("VOLVIENDO Al MENU PRINCIPAL")
                 }else{
-                   console.log("OPCION INVALIDA DIGITE UNA CORRECTA")  
+                   console.log(" OPCION INVALIDA \n POR FAVOR INGRESE UNA OPCION VALIDA")  
                 }
                 console.log("Numero de intentos de validacion " +contadorContraseñas )
                             
@@ -110,7 +110,7 @@ do{
 
                 console.log("4 -Generador de Tablas de Multiplicar")
         do{   
-                  opcionNumeros=Number(prompt("1- Realizar Calculo\n2- Salir"))
+                  opcionNumeros=Number(prompt("DESEA REALIZAR CALCULO \n1- Continuar\n2- Salir"))
                 
                   switch(opcionNumeros){
 
@@ -136,21 +136,120 @@ do{
                 break;
 //************************************************************************************************************************************* */                 
             case 5:
-                console.log("5")
+                console.log("Suma de Números Primos:")                
+            do{
+                opcionNumeros=Number(prompt("DESEA REALIZAR CALCULO \n1- Continuar\n2- Salir"))
+
+                switch(opcionNumeros){
+                    case 1:
+                        let sumaPrimos=0
+                    let numeroPrimo=parseInt(prompt("Por favor ingrese un numero para calcular numeros primos"))
+                    
+                    for(let num=2;num<=numeroPrimo;num++){
+                        let esPrimo=true
+
+                        for(let i=2;i<=Math.sqrt(num);i++){
+                            if(num % i===0){
+                                esPrimo=false
+                                break
+                            }
+                        }
+                        if(esPrimo){
+                            console.log(num + " Es primo ")
+                            sumaPrimos+=num
+                        }
+                    }
+                    console.log("La suma de los numeros primos hasta " + numeroPrimo + " es " +sumaPrimos) 
+                    
+                    Contador++
+                    console.log("Numero de operaciones realizadas: " + Contador)    
+                    
+                    case 2:
+                        console.log("VOLVIENDO AL MENU PRINCIPAL")
+                        break;
+                    default:
+                        console.log(" OPCION INVALIDA \n POR FAVOR INGRESE UNA OPCION VALIDA")    
+                    }
+
+            }while(opcionNumeros!=2)
                 break;
             case 6:
-                console.log("6")
-                break;
+                console.log("Secuencia de Fibonacci: ")
+
+                do{   
+                    opcionNumeros=Number(prompt("DESEA REALIZAR CALCULO \n1- Continuar\n2- Salir"))
+                  
+                    switch(opcionNumeros){
+
+                      case 1:
+                      let n1=0
+                      let n2=1
+                      let resultado=0
+
+                      var numeroFibonacci=Number(prompt("ingrese numero para realizar la frecuencia"))
+                      console.log(n1)
+                      console.log(n2)
+                      for(let i=3;i<=numeroFibonacci;i++){
+                          resultado=n1+n2
+                          n1=n2
+                          n2=resultado
+                          console.log(resultado)
+                      }
+                          Contador++
+                          console.log("Numero de operaciones realizadas: " + Contador)    
+                          break;
+                      case 2:
+                          console.log("VOLVIENDO AL MENU PRINCIPAL")
+                          break;
+                      default:
+                          console.log(" OPCION INVALIDA \n POR FAVOR INGRESE UNA OPCION VALIDA")    
+       
+                  }
+              }while(opcionNumeros!=2)                  
+                  break;
             case 7:
-                console.log("7")
-                break;
+                     console.log("Convertidor de Temperatura:")
+                     let opcionGrados
+
+                     do{
+                        opcionNumeros=Number(prompt("DESEA REALIZAR CALCULO \n1- Continuar\n2- Salir"))
+
+                        if(opcionNumeros==1){
+                            console.log("1-pasar celsius a Fahrenheit")
+                            console.log("2-pasar fahrenheit a Celsius")
+                            let opcionGrados=Number(prompt("POR FAVOR SELECCIONE EL TIPO DE CONVERSION"))
+                          switch(opcionGrados){
+                            case 1:
+                                let valorIngresadoc=Number(prompt("Por favor ingrese el valor a pasar celsius a Fahrenheit"))
+                                let gradosC=(1.8*valorIngresadoc)+32
+                                console.log(gradosC)
+                                break
+                            case 2:
+                                let valorIngresadoF=Number(prompt("Por favor ingrese el valor a pasar Fahrenheit a celsius"))
+                                let gradosF=(valorIngresadoF-32)/1.8
+                                console.log(gradosF)
+                                break
+                            default:
+                                console.log(" OPCION INVALIDA VOLVIENDO AL MENU ANTERIOR ") 
+                                break       
+                          }
+                        }else if(opcionGrados==2){
+                            console.log("VOLVIENDO AL MENU PRINCIPAL")
+                        }else{
+                              console.log(" OPCION INVALIDA \n POR FAVOR INGRESE UNA OPCION VALIDA") 
+                        }
+
+                     }while(opcionNumeros!=2)
+                     break; 
+/**************************************************************************************************************************************************** */
+                
             case 8:
                 console.log("8")
                 break;
+            case 9:
+                console.log("SALIENDO")     
             default:
-                console.log("OPCION INVALIDA")
-                break;
-          
+                break;   
         }
             
 }while(opcion!=9);
